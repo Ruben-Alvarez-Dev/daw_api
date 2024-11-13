@@ -3,11 +3,14 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\API\unitController;
+use App\Http\Controllers\API\userController;
+use App\Http\Controllers\API\tableController;
+use App\Http\Controllers\API\reservationController;
+
 // All routes fot UNITS
 //================================================
-Route::get('/units', function () {
-    return "get all units";
-});
+Route::get('/units', [unitController::class, 'index']);
 Route::get('/units/{id}', function () {
     return "get unit by ID";
 });
