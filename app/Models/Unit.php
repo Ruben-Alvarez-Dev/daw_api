@@ -7,18 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Unit extends Model
 {
-    use HasFactory;
+   use HasFactory;
 
-    protected $table = 'units';
+   protected $table = 'units';
 
-    protected $fillable = [
-        'name',
+   protected $fillable = [
         'business_name',
         'tax_id',
+        'name',
         'adress',
         'phone',
         'photo_path',
-        'status'
+        'status',
+        'zones'
+   ];
+
+   protected $attributes = [
+        'status' => 'active',
+        'zones' => '["main"]'   
     ];
-    //
+
+   protected $casts = [
+       'zones' => 'array'
+   ];
 }

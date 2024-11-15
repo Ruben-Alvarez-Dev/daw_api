@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('business_name');  // Razón social
-            $table->string('tax_id');         // CIF
-            $table->string('address');
-            $table->string('phone');
-            $table->string('photo_path')->nullable();  // Ruta a la imagen
+            $table->string('business_name');
+            $table->string('tax_id');
+            $table->string('name')->nullable();
+            $table->string('adress')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('photo_path')->nullable();
             $table->string('status')->default('active');
-            $table->json('zones');            // Almacena las zonas como un array en JSON
+            $table->json('zones')->nullable();
             $table->timestamps();
         });
     }

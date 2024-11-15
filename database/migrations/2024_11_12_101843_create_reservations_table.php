@@ -13,16 +13,18 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('unit_id')
+                  ->constrained()
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
             $table->foreignId('user_id')
+                  ->nullable()
                   ->constrained()
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-            $table->foreignId('table_id')
-                  ->constrained()
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
-            $table->dateTime('datetime');  // Fecha y hora en un solo campo
-            $table->integer('pax');        // Número de personas
+            $table->json('table_ids');
+            $table->dateTime('datetime');
+            $table->integer('pax')->default(1);
             $table->string('status')->default('pending');
             $table->timestamps();
         });

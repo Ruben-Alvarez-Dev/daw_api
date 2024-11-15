@@ -11,82 +11,31 @@ use App\Http\Controllers\API\reservationController;
 // All routes fot UNITS
 //================================================
 Route::get('/units', [unitController::class, 'index']);
-Route::get('/units/{id}', function () {
-    return "get unit by ID";
-});
-Route::post('/units', function () {
-    return "post units";
-});
-Route::put('/units/{id}', function () {
-    return "put unit by ID";
-});
-Route::patch('/units/{id}', function () {
-    return "patch unit by ID";
-});
-Route::delete('/units/{id}', function () {
-    return "delete unit by ID";
-});
+Route::get('/units/{id}', [unitController::class, 'show']);
+Route::post('/units', [unitController::class, 'store']);
+Route::put('/units/{id}', [unitController::class, 'update']);
+Route::delete('/units/{id}', [unitController::class, 'destroy']);
 
 // All routes fot USERS
 //================================================
-Route::get('/users', function () {
-    return "get all users";
-});
-Route::get('/users/{id}', function () {
-    return "get user by ID";
-});
-Route::post('/users', function () {
-    return "post users";
-});
-Route::put('/users/{id}', function () {
-    return "put user by ID";
-});
-Route::patch('/users/{id}', function () {
-    return "patch user by ID";
-});
-Route::delete('/users/{id}', function () {
-    return "delete user by ID";
-});
+Route::get('/users', [userController::class, 'index']);
+Route::get('/users/{id}', [userController::class, 'show']);
+Route::post('/users', [userController::class, 'store']);
+Route::put('/users/{id}', [userController::class, 'update']);
+Route::delete('/users/{id}', [userController::class, 'destroy']);
 
 // All routes fot TABLES
 //================================================
-Route::get('/tables', function () {
-    return "get all tables";
-});
-Route::get('/tables/{id}', function () {
-    return "get table by ID";
-});
-Route::post('/tables', function () {
-    return "post tables";
-});
-Route::put('/tables/{id}', function () {
-    return "put table by ID";
-});
-Route::patch('/tables/{id}', function () {
-    return "patch table by ID";
-});
-Route::delete('/tables/{id}', function () {
-    return "delete table by ID";
-});
+Route::get('/tables', [tableController::class, 'index']);
+Route::get('/tables/{id}', [tableController::class, 'show']);
+Route::post('/tables', [tableController::class, 'store']);
+Route::put('/tables/{id}', [tableController::class, 'update']);
+Route::delete('/tables/{id}', [tableController::class, 'destroy']);
 
 // All routes fot RESERVATIONS
 //================================================
-Route::get('/reservations', function () {
-    return "get all reservations";
-});
-Route::get('/reservations/{id}', function () {
-    return "get reservation by ID";
-});
-Route::post('/reservations', function () {
-    return "post reservations";
-});
-Route::put('/reservations/{id}', function () {
-    return "put reservation by ID";
-});
-Route::patch('/reservations/{id}', function () {
-    return "patch reservation by ID";
-});
-Route::delete('/reservations/{id}', function () {
-    return "delete reservation by ID";
-});
-
+Route::get('/reservations', [reservationController::class, 'index']);
+Route::get('/reservations/{id}', [reservationController::class, 'show']);
+Route::post('/reservations', [reservationController::class, 'store']);
+Route::put('/reservations/{id}', [reservationController::class, 'update']);
+Route::delete('/reservations/{id}', [reservationController::class, 'destroy']);

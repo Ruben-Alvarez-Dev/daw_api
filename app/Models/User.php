@@ -36,11 +36,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+    protected $attributes = [
+        'role' => 'user',
+        'status' => 'active'
+    ];
+
     protected function casts(): array
     {
         return [

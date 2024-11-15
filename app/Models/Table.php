@@ -10,13 +10,16 @@ class Table extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
         'unit_id',
         'name',
         'capacity',
         'status',
         'zone'
     ];
-    
-    //
+
+    protected $attributes = [
+        'status' => 'active',
+        'zone' => 'main',
+        'capacity' => 1
+    ];
 }

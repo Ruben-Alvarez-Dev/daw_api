@@ -18,9 +18,9 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->string('name');
-            $table->integer('capacity');
-            $table->string('status')->default('available');
-            $table->string('zone');
+            $table->integer('capacity')->default(1);
+            $table->string('status')->default('active');
+            $table->string('zone')->default('main');
             $table->timestamps();
         });
     }
